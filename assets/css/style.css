@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+nav {
+    float: right;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    float: left;
+    position: relative;
+  }
+  nav ul li a {
+    display: block;
+    padding: 0 20px;
+    line-height: 70px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    /*
+    The full path of this code is nav ul li a:not(:only-child):after. This means that the code will apply to any a tag in our nav list that is NOT an only child, aka any dropdown. The :after means it comes after the output of the tag. I’ve decided that to specify any nav item as a dropdown, it will be followed by a unicode arrow – ▾ (#9662).
+    */
+  }
+  nav ul li a:hover {
+      color:#6d6d6d;
+      /* asda */
+  }
+  nav ul li a:not(:only-child):after {
+    padding-left: 4px;
+    content: ' ▾';
+  }
+  nav ul li ul li {
+    min-width: 190px;
+  }
+  nav ul li ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  
+  .nav-dropdown {
+    position: absolute;
+    z-index: 1;
+    /* Guarantees that the dropdown will display on top of any content. */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+  }
+  
+  .nav-mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    height: 70px;
+    width: 70px;
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .nav-mobile {
+      display: block;
+    }
+  
+    nav {
+      width: 100%;
+      padding: 70px 0 15px;
+    }
+    nav ul {
+      display: none;
+    }
+    nav ul li {
+      float: none;
+    }
+    nav ul li a {
+      padding: 15px;
+      line-height: 20px;
+    }
+    nav ul li ul li a {
+      padding-left: 30px;
+    }
+  }
+  #nav-toggle {
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    cursor: pointer;
+    padding: 10px 35px 16px 0px;
+  }
+  #nav-toggle span,
+  #nav-toggle span:before,
+  #nav-toggle span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: #463f3f;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 300ms ease-in-out;
+  }
+  #nav-toggle span:before {
+    top: -10px;
+  }
+  #nav-toggle span:after {
+    bottom: -10px;
+  }
+  #nav-toggle.active span {
+    background-color: transparent;
+  }
+  #nav-toggle.active span:before, #nav-toggle.active span:after {
+    top: 0;
+  }
+  #nav-toggle.active span:before {
+    transform: rotate(45deg);
+  }
+  #nav-toggle.active span:after {
+    transform: rotate(-45deg);
+  }
+  
+  @media screen and (min-width: 800px) {
+    .nav-list {
+      display: block !important;
+    }
+  }
+  /* 
+  .navigation – the outer wrapper for the navbar. Specifies the height and color, and will stretch the full width of the viewport.
+  */
+.navigation {
+  height: 70px;
+  /* background: #ffffff; */
+  z-index: 11;
+}
+  
+.nav-container {
+  max-width: 1900px;
+  margin: 0 auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  z-index: 11;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  color: #ffffff;
+  /* set backgroung opacity to .5 */
+    background: rgba(0, 0, 0, 0.5);
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.8em;
+  font-family: 'Space Mono', monospace;
+}
+.brand a,
+.brand a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo{
+    margin-left: 1.5rem;
+}
+
+.wrapper{
+    position: relative;
+    display: inline-block;
+}
+
+.overlay {
+    position: fixed;
+    left: 14vw;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: -2;
+    top: 0;
+    overflow-x: hidden;
+}
+
+.left {
+    left: 0;
+    background-size: repeat;
+}
+
+.right {
+    padding-top: 20px;
+    right: 0;
+    background:#010001;
+}
+
+.cent-txt {
+    place-items: center;
+    display: grid;
+}
+
+.man-doodle{
+    margin-top: 2rem;
+    max-width: 430px;
+}
+
+.power-txt{
+    text-align: center;
+    max-width: 430px;
+}
+
+.welcome-tagline{
+    margin-top: 3rem;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    color: #fff;
+}
+
+.rect-log {
+    margin-top: 16vh;
+    border-radius: 0.5rem;
+    padding: 2rem 0rem 2rem;
+}
+
+.heading {
+    text-align: center;
+    font-family: 'Moon Dance', cursive;
+    font-size: 59px;
+    color: #38a517;
+}
+
+.left-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+
+}
+
+.form-mar {
+    margin-top: 1rem;
+}
+
+.fields {
+    place-items: center;
+    display: grid;
+}
+
+.name-login {
+    margin-bottom: 0.6rem;
+    padding: 0.7rem 0.5rem;
+    border: 0px solid;
+    border-radius: 5px;
+    width: 93%;
+    background-color: rgb(214, 214, 214)
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.tags {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0.5rem;
+}
+
+.gradient-color {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.passtext {
+    opacity: .5;
+    font-size: 11px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.btn-login {
+    margin-top: 2.5rem;
+    width: 93%;
+    padding: 0.7rem 0.5rem;
+    color: #fff;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    box-shadow: 0px 8px 11px rgba(117, 117, 117, 0.3);
+    border: 0px solid;
+    border-radius: 5px;
+}
+
+
+.btn-login:hover {
+    margin-top: 2.5rem;
+    width: 93%;
+    padding: 0.7rem 0.5rem;
+    color: #fff;
+    background-color: #0093E9;
+    box-shadow: 0px 0px 3px rgba(117, 117, 117, 0.3);
+    background-image: linear-gradient(180deg, #0093E9 0%, #80D0C7 100%);
+    transition: 0.5s;
+    border: 0px solid;
+    border-radius: 5px;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 90px;
+    width: 100%;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+.feature{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+}
+
+.producer-feature{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    color: #2c8ce5;
+}
+
+.banner-login{
+    text-align: center;
+    margin-top:30vh;
+}
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+@media (max-width: 800px){
+    .split {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+    }
+    .left {
+        left: 0;
+        display: none;
+        visibility: hidden;
+        background-size: repeat;
+    }
+    .right {
+        padding-top: 20px;
+        background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url('images/pattern.svg');
+    }
+
+    .rect-log {
+        margin-top: 10vh;
+        width: 20rem;
+        border-radius: 0.5rem;
+        padding: 2rem 0rem 2rem;
+    }
+}
